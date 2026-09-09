@@ -18,6 +18,6 @@ public class UserController {
     private final UserService userService;
 
     public ResponseEntity<UserDto> createUser(@RequestBody CreateUserDto createUserDto){
-        return ResponseEntity.status(HttpStatus.CREATED).body(userService.saveUser(createUserDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.saveUser(createUserDto));
     }
 }
