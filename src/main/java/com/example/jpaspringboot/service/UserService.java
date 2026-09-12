@@ -24,6 +24,5 @@ public class UserService {
     public List<UserDto> getUsers() {
     }
 
-    public Object getUserById(Long id) {
-    }
+
 }

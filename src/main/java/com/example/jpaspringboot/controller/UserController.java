@@ -28,10 +28,7 @@ public class UserController {
     public ResponseEntity<Void> getUser(@PathVariable Long id){
         return ResponseEntity.status((HttpStatus.OK).body(userService.getUserById(id));
     }
-    @GetMapping
-    public ResponseEntity<List<UserDto>> getUsers(){
-        return ResponseEntity.status((HttpStatus.OK).body(userService.getUsers());
-    }
+
 
     
 }
