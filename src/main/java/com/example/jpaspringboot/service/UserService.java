@@ -25,4 +25,6 @@ public class UserService {
     }
 
 
+    public Void getUserById(Long id) {
+    }
 }

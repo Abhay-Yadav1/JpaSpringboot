@@ -22,11 +22,11 @@ public class UserController {
     }
     @GetMapping
     public ResponseEntity<List<UserDto>> getUsers(){
-        return ResponseEntity.status((HttpStatus.OK).body(userService.getUsers());
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getUsers());
     }
     @GetMapping("/users/{id}")
     public ResponseEntity<Void> getUser(@PathVariable Long id){
-        return ResponseEntity.status((HttpStatus.OK).body(userService.getUserById(id));
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getUserById(id));
     }
 
 
