@@ -10,6 +10,8 @@ import com.example.jpaspringboot.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class OrderService {
@@ -23,4 +25,8 @@ public class OrderService {
            Order savedOrder=orderRepository.save(order);
            return new OrderDto(savedOrder.getId(),savedOrder.getProductName(),savedOrder.getUser());
      }
+
+    public List<OrderDto> getOrdersByUserId(Long userId) {
+         return
+    }
 }

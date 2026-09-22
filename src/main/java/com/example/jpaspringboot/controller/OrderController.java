@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.module.ResolutionException;
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/v1/users/{userId}/orders")
@@ -17,5 +20,9 @@ public class OrderController {
      @PostMapping
      public ResponseEntity<OrderDto> createOrder(@PathVariable Long userId, @RequestBody CreateOrderDto createOrderDto){
          return ResponseEntity.status(HttpStatus.CREATED).body(orderService.createOrder(userId,createOrderDto));
+     }
+     @GetMapping
+     public ResponseEntity<List<OrderDto>> getOrderByUserId(@PathVariable Long userId){
+         return ResponseEntity.status(HttpStatus.OK).body(orderService.getOrdersByUserId(userId));
      }
 }
