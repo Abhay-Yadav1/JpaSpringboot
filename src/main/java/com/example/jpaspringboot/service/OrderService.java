@@ -10,7 +10,7 @@ import com.example.jpaspringboot.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -26,7 +26,7 @@ public class OrderService {
            return new OrderDto(savedOrder.getId(),savedOrder.getProductName(),savedOrder.getUser());
      }
 
-    public List<OrderDto> getOrdersByUserId(Long userId) {
-         return
+    public Optional<User> getOrdersByUserId(Long userId) {
+         return userRepository.findById(userId);
     }
 }
