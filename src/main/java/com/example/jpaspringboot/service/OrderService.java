@@ -8,8 +8,11 @@ import com.example.jpaspringboot.entities.User;
 import com.example.jpaspringboot.repository.OrderRepository;
 import com.example.jpaspringboot.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,7 +29,13 @@ public class OrderService {
            return new OrderDto(savedOrder.getId(),savedOrder.getProductName(),savedOrder.getUser());
      }
 
-    public Optional<User> getOrdersByUserId(Long userId) {
-         return userRepository.findById(userId);
+    public List<OrderDto> getOrdersByUserId(Long userId) {
+        List<Order> orders=orderRepository.findByUserId(userId);
+        List<OrderDto> orderDtos=new ArrayList<>();
+        orders.forEach(order -> {
+            OrderDto orderDto=new OrderDto(order.getId(),order.getProductName(),order.getUser());
+        orderDtos.add(orderDto);});
+        return orderDtos;
+
     }
 }
