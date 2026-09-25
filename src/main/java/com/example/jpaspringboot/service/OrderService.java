@@ -33,8 +33,9 @@ public class OrderService {
         List<Order> orders=orderRepository.findByUserId(userId);
         List<OrderDto> orderDtos=new ArrayList<>();
         orders.forEach(order -> {
-            OrderDto orderDto=new OrderDto(order.getId(),order.getProductName(),order.getUser());
-        orderDtos.add(orderDto);});
+            OrderDto orderDto = new OrderDto(order.getId(), order.getProductName(), order.getUser());
+            orderDtos.add(orderDto);
+        });
         return orderDtos;
 
     }
