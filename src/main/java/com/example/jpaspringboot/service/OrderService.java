@@ -3,6 +3,7 @@ package com.example.jpaspringboot.service;
 
 import com.example.jpaspringboot.dto.CreateOrderDto;
 import com.example.jpaspringboot.dto.OrderDto;
+import com.example.jpaspringboot.dto.UserDto;
 import com.example.jpaspringboot.entities.Order;
 import com.example.jpaspringboot.entities.User;
 import com.example.jpaspringboot.repository.OrderRepository;
@@ -26,7 +27,7 @@ public class OrderService {
            Order order =new Order();
            order.setProductName(createOrderDto.getProductName());
            Order savedOrder=orderRepository.save(order);
-           return new OrderDto(savedOrder.getId(),savedOrder.getProductName(),savedOrder.getUser());
+           return new OrderDto(savedOrder.getId(),savedOrder.getProductName(),new UserDto(savedOrder.getUser().getId()));
      }
 
     public List<OrderDto> getOrdersByUserId(Long userId) {

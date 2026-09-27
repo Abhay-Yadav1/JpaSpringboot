@@ -12,5 +12,5 @@ import lombok.Setter;
 public class OrderDto {
     private Long id;
     private String productName;
-    private User user;
+    private UserDto user;
 }
