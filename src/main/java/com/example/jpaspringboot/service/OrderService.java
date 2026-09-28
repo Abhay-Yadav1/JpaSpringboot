@@ -9,12 +9,12 @@ import com.example.jpaspringboot.entities.User;
 import com.example.jpaspringboot.repository.OrderRepository;
 import com.example.jpaspringboot.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.aspectj.weaver.ast.Or;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @AllArgsConstructor

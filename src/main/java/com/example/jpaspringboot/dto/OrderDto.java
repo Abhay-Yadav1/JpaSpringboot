@@ -13,4 +13,7 @@ public class OrderDto {
     private Long id;
     private String productName;
     private UserDto user;
+
+    public OrderDto(Long id, String productName, User user) {
+    }
 }
