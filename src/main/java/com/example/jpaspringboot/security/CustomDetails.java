@@ -1,4 +1,7 @@
 package com.example.jpaspringboot.security;
 
-public class CustomDetails {
+import org.springframework.stereotype.Service;
+
+@Service
+public class CustomDetails extends CustomUserDetails {
 }
