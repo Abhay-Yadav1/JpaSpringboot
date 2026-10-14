@@ -16,8 +16,4 @@ import java.util.List;
 public class newcontroller {
      private final OrderService orderService;
 
-     @GetMapping
-    public List<OrderDto> getByUserId(){
-
-     }
 }
