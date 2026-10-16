@@ -25,4 +25,8 @@ public class OrderController {
      public ResponseEntity<List<OrderDto>> getOrderByUserId(@PathVariable Long userId){
          return ResponseEntity.status(HttpStatus.OK).body(orderService.getOrdersByUserId(userId));
      }
+    @GetMapping
+    public ResponseEntity<List<OrderDto>> getOrderByUserIdd(@PathVariable Long userId){
+        return ResponseEntity.status(HttpStatus.OK).body(orderService.getOrdersByUserId(userId));
+    }
 }
